@@ -11,6 +11,7 @@ Een LTI Tool voor integratie met Learning Management Systems (LMS). Deze README 
   - `"axios": "^1.7.9"`
   - `"cors": "^2.8.5"`
   - `"dotenv": "^16.4.7"`
+  - `"ejs": "^3.1.10"`
   - `"express": "^4.21.2"`
   - `"ltijs": "^5.9.6"`
   - `"mongodb": "^6.12.0"`
@@ -80,7 +81,7 @@ Een LTI Tool voor integratie met Learning Management Systems (LMS). Deze README 
    - Ga naar **Manage Extensibility -> LTI Advantage -> Tool** en zet deze op "Enabled".
 
 3. **Security-instellingen**
-   - Open de Tool en vink **"Send Institution Role"** aan. *(TODO: Automatisch instellen)*
+   - Open de Tool en vink **"Send Institution Role"** aan.
 
 4. **Deployment aanmaken**
    - Ga naar **View Deployments -> New Deployment**.
