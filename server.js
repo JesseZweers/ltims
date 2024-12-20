@@ -34,20 +34,16 @@ lti.setup(process.env.LTI_KEY,
   }
 );
 
-// EJS inladen voor de Views
+// Middleware & EJS setup
 lti.app.set('view engine', 'ejs');
 lti.app.set('views', path.join(__dirname, 'views'));
-
-lti.app.use(cors({
-  // origin: process.env.FRONTEND_URL, // Toestaan van Vue-frontend
-  credentials: true // Sta validation cookie toe
-}));
+lti.app.use(cors({ credentials: true }));
 
 // Controle in Database of de specifieke LMS omgeving al geregistreerd is
 async function isPlatformRegistered(platformUrl) {
   const platform = await lti.getPlatform(platformUrl);
-  console.log('Platform status:', platform ? 'Found' : 'Not found');
-  return platform ? true : false; // Return true als LMS omgeving al is greregistreerd
+  console.log(`Platform status: ${platform ? 'Found' : 'Not found'}`);
+  return !!platform; // Return true als LMS omgeving al is greregistreerd
 }
 
 lti.onDynamicRegistration(async (req, res) => {
@@ -127,5 +123,4 @@ lti.onConnect(async (token, req, res) => {
 });
 
 // Start de server
-const port = process.env.PORT || 3000;
-lti.deploy({ port });
+lti.deploy(process.env.PORT);
