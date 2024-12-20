@@ -1,0 +1,21 @@
+{
+  "name": "ltims",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "Jesse Zweers",
+  "license": "ISC",
+  "description": "LTI Microservice voor Eduface integratie",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ltijs": "^5.9.6",
+    "mongodb": "^6.12.0"
+  }
+}
