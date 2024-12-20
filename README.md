@@ -103,7 +103,3 @@ Een LTI Tool voor integratie met Learning Management Systems (LMS). Deze README 
    - Zodra de tool is toegevoegd, zie je het token dat naar LTIMS wordt gestuurd.
 
 ---
-
-## Licentie
-
-Dit project is gelicenseerd onder de MIT-licentie. Zie het LICENSE-bestand voor meer informatie.
