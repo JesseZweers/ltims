@@ -77,7 +77,7 @@ Een LTI Tool voor integratie met Learning Management Systems (LMS). Deze README 
      ```
 
 2. **Tool inschakelen**
-   - Ga naar **Manage Extensibility -> LTI Advantage -> Tool** en zet deze op "Enabled". *(TODO: Automatisch instellen)*
+   - Ga naar **Manage Extensibility -> LTI Advantage -> Tool** en zet deze op "Enabled".
 
 3. **Security-instellingen**
    - Open de Tool en vink **"Send Institution Role"** aan. *(TODO: Automatisch instellen)*
