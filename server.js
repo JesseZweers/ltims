@@ -104,7 +104,7 @@ lti.onDynamicRegistration(async (req, res) => {
 // LTI Launch Handler
 // lti.onConnect(async (token, req, res) => {
 //   console.log('LTI Launch received');
-//   const frontendUrl = `${process.env.FRONTEND_URL}?jwt=${token}`;
+//   const frontendUrl = `https://eduface.nl`;
 //   return res.redirect(frontendUrl);
 // });
 
