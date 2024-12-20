@@ -3,6 +3,8 @@ require('dotenv').config();
 const lti = require('ltijs').Provider;
 const axios = require('axios');
 const cors = require('cors');
+const path = require('path');
+
 
 // Setup provider
 lti.setup(process.env.LTI_KEY,
@@ -31,6 +33,10 @@ lti.setup(process.env.LTI_KEY,
     }
   }
 );
+
+// EJS inladen voor de Views
+lti.app.set('view engine', 'ejs');
+lti.app.set('views', path.join(__dirname, 'views'));
 
 lti.app.use(cors({
   // origin: process.env.FRONTEND_URL, // Toestaan van Vue-frontend
@@ -66,10 +72,10 @@ lti.onDynamicRegistration(async (req, res) => {
 
     if (platformExists) {
       console.log('Platform is already registered:', platformUrl);
-      res.status(200).json({
+      res.render('register-duplicate', {
         status: 'already_registered',
         message: 'This platform is already registered.',
-        platformUrl
+        details: { platformUrl }
       });
       return;
     }
@@ -83,19 +89,18 @@ lti.onDynamicRegistration(async (req, res) => {
 
     console.log('Registration successful:', message);
 
-    res.status(200).json({
+    res.render('register-success', {
       status: 'success',
       message: 'Platform registered successfully.',
-      details: message
+      details: { platformUrl }
     });
 
   } catch (error) {
     console.error('Registration error:', error.message);
 
-    res.status(500).json({
+    res.render('register-error', {
       status: 'error',
-      message: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      message: error.message
     });
   }
 });

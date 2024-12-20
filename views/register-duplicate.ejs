@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registratiefout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Spartan', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e4eef2;
+      color: #002333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: #f8fbfc;
+      box-shadow: 0 4px 30px rgba(0, 35, 51, 0.1);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #e63946;
+      margin-bottom: 1.5rem;
+    }
+    .message {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #002333;
+      margin-bottom: 1.2rem;
+    }
+    .platform-url {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #007bff;
+      word-wrap: break-word;
+      margin-bottom: 1.8rem;
+    }
+    .button-container {
+      margin-top: 1.8rem;
+    }
+    .close-button {
+      background-color: #002333;
+      font-family: 'Spartan', sans-serif;
+      font-weight: 600;
+      color: #fff;
+      border: none;
+      padding: 14px 48px 12px 48px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .close-button:hover {
+      background-color: #00e075;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 224, 117, 0.2);
+    }
+    .copyright {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: #778899cf;
+      font-weight: 400;
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Er is een fout opgetreden</h1>
+    <p class="message">Het lijkt erop dat de Eduface LTI Tool al is geregistreerd voor deze LMS-omgeving. Neem contact met ons op voor ondersteuning.</p>
+    <p class="platform-url"><%= details.platformUrl %></p>
+    <div class="button-container">
+      <button class="close-button" onclick="window.close()">Sluit venster</button>
+    </div>
+    <p class="copyright">© 2024 Eduface B.V.</p>
+  </div>
+</body>
+</html>
